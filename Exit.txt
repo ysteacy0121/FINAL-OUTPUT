@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+int choice;
+
+    string Item_name[100];
+    int Price[105], Quantity[105];
+    int count = 0;
+    int found;
+
+    do {
+
+        cout << "\n******INVENTORY MENU******\n";
+        cout << "1. Add Item\n";
+        cout << "2. View All Items\n";
+        cout << "3. inventory item\n";
+        cout << "4. delete item\n";
+        cout << "5. Exit\n";
+
+        cout << "your choice: \n";
+        cin >> choice;
+
+        switch (choice) {
+
+          case 5: {
+                cout << "Exiting Inventory System...";
+                break;
+            }
+
+            default: {
+                cout << "Invalid choice!";
+                break;
+            }
+        }
+
+       
+    }while (choice != 5);
+
+
+    return 0;
+}
