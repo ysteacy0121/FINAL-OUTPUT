@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+int choice;
+
+    string Item_name[100];
+    int Price[105], Quantity[105];
+    int count = 0;
+    int found;
+
+    do {
+
+        cout << "\n******INVENTORY MENU******\n";
+        cout << "1. Add Item\n";
+        cout << "2. View All Items\n";
+        cout << "3. inventory item\n";
+        cout << "4. delete item\n";
+        cout << "5. Exit\n";
+
+        cout << "your choice: \n";
+        cin >> choice;
+
+        switch (choice) {
+
+           case 4: {
+                string search;
+
+                cout << "Enter item name to delete: ";
+                cin >> search;
+
+                found = 0;
+
+                for (int i = 0; i < count; i++) {
+
+                    if (Item_name[i] == search) {
+
+                        for (int j = i; j < count - 1; j++) {
+
+                            Item_name[j] = Item_name[j + 1];
+                            Quantity[j] = Quantity[j + 1];
+                            Price[j] = Price[j + 1];
+                        }
+
+                        count--;
+
+                        cout << "Item deleted!";
+
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if (found == 0) {
+                    cout << "Item not found!";
+                }
+
+                break;
+            }
+        }
+
+            } 
+       
+    }while (choice != 5);
+
+
+    return 0;
+}
